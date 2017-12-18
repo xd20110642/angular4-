@@ -3,16 +3,26 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { MessComponent } from './mess/mess.component';
+import {MessService} from "./shared/mess.service";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { MessPipe } from './pipe/mess.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MessComponent,
+    MessPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    MessService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

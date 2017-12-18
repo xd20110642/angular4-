@@ -1,0 +1,28 @@
+
+<!-- 收索-->
+<div>
+  <input type="text" [(ngModel)]="keyword" [formControl]="value" placeholder="请输入的你要搜索的名字">
+</div>
+
+<div *ngFor="let mes of mess|mess: 'name':keyword">
+  <h3>我叫{{mes.name}}</h3>
+  <span>今年{{mes.age}}岁</span>
+  <span>他说了{{mes.talk}}</span>
+</div>
+<div>
+  <button (click)="onadd()">点击添加</button>
+  <button (click)="onremove()">点击删除</button>
+</div>
+
+<div>
+  <div>
+    <button (click)="isshow=! isshow">手动添加</button>
+  </div>
+  <div [hidden]="isshow">
+    <input type="text" [(ngModel)]="addname" placeholder="添加姓名">
+    <input type="text" [(ngModel)]="addage" placeholder="添加年龄">
+    <textarea [(ngModel)]="text" placeholder="请输入的内容"></textarea>
+    <button (click)="onpush()"> 提交</button>
+  </div>
+
+</div>
